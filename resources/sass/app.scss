@@ -1,0 +1,142 @@
+// Fonts
+
+
+
+
+// Variables
+$theme-1: #120136;
+$theme-2: #035aa6;
+$theme-3: #40bad5;
+$theme-4: #fcbf1e;
+
+$theme-colors: (
+    "primary": $theme-2,
+    "success": #0CCE6B,
+    "theme-1": $theme-1,
+    "theme-2": $theme-2,
+    "theme-3": $theme-3,
+    "theme-4": $theme-4
+);
+
+$enable-responsive-font-sizes: true;
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import '~slick-carousel/slick/slick';
+
+.bg-white-90 {
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.icon-feature {
+    width: 3rem;
+}
+
+.section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    
+    @include media-breakpoint-up(sm) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+}
+
+#main-navbar {
+    @include media-breakpoint-up(sm) {
+        position: sticky;
+        top: 0;
+        z-index: 1020;
+    }
+
+    .navbar-brand {
+        color: $theme-2;
+        line-height: 1.2;
+
+        :first-child {
+            font-weight: bold;
+            display: block;
+        }
+    }
+}
+
+#main-footer {
+    padding-top: 1.5rem;
+    padding-bottom: 6rem;
+
+    @include media-breakpoint-up(sm) {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .footer-brand {
+        @include font-size(1.25rem);
+        color: white;
+        line-height: 1.2;
+
+        :first-child {
+            font-weight: bold;
+            display: block;
+        }
+    }
+}
+
+#startseite {
+    header {
+        background-size: cover;
+        background-position: center;
+        background-image: linear-gradient(rgba($theme-2, .25), rgba($theme-2, .25)), url('/img/wasser.jpeg');
+        
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+
+        @include media-breakpoint-up(md) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        h1 {
+            @include font-size(5rem);
+        }
+
+        p {
+            @include font-size(2rem);
+        }
+    }
+
+    #impressionen-slider {
+        .slick-list {
+            overflow: visible;
+            margin: 0 -15px;
+        }
+
+        .slick-slide {
+            margin: 0 15px;
+        }
+
+        .carousel-control-prev:not(:hover),
+        .carousel-control-next:not(:hover) {
+            opacity: .75;
+        }
+
+        button.carousel-control-prev,
+        button.carousel-control-next {
+            border: none;
+            background: none;
+            padding: 0 1rem;
+            width: auto;
+        }
+    }
+}
+
+.full-height {
+    min-height: calc(100vh - 330px);
+    
+    @include media-breakpoint-up(sm) {
+        min-height: calc(100vh - 306px);
+    }
+
+    @include media-breakpoint-up(md) {
+        min-height: calc(100vh - 234px);
+    }
+}
